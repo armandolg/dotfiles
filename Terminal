@@ -1,0 +1,27 @@
+yay -S zsh zsh-completions
+
+chsh -s /bin/zsh
+
+(restart)
+
+yay -S exa
+
+yay -S ttf-meslo-nerd-font-powerlevel10k                //and cange the terminal font
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+
+git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+
+cd ~/.oh-my-zsh/custom/plugins
+
+git clone https://github.com/DarrinTisdale/zsh-aliases-exa.git 
+
+sudo nano ~/.zshrc
+
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-aliases-exa)
