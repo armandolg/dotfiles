@@ -277,7 +277,6 @@ bindsym $mod+p exec /usr/local/bin/switch-audio-port
 bindsym $mod+w exec /opt/google/chrome/google-chrome
 bindsym $mod+n exec /usr/bin/thunar
 bindsym Print exec scrot ~/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/$(date +"%Y-%m-%d-%T")-screenshot.png"
-bindsym $mod+c exec /usr/bin/code
 
 # Power Profiles menu switcher (rofi)
 bindsym $mod+Shift+p exec ~/.config/i3/scripts/power-profiles
@@ -290,8 +289,8 @@ bindsym $mod+Shift+p exec ~/.config/i3/scripts/power-profiles
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1:"
 set $ws2 "2:"
-set $ws3 "3:"
-set $ws4 "4:"
+set $ws3 "3:"
+set $ws4 "4:"
 set $ws5 "5:"
 set $ws6 "6"
 set $ws7 "7"
@@ -311,15 +310,15 @@ set $ws10 "10"
 # bind program to workspace and focus to them on startup:
 assign [class="Xfce4-terminal"] $ws1
 assign [class="Google-chrome"] $ws2
-assign [class="Code"] $ws3
-assign [class="Thunar"] $ws4
+assign [class="Thunar"] $ws3
+assign [class="Thunderbird"] $ws4
 assign [class="TelegramDesktop"] $ws5
 
 # automatic set focus new window if it opens on another workspace then the current:
 for_window [class=Xfce4-terminal] focus
-for_window [class=Google-chrome] focus
-for_window [class=Code] focus
+for_window [class="Google-chrome"] focus
 for_window [class=Thunar] focus
+for_window [class=Thunderbird] focus
 for_window [class=TelegramDesktop] focus
 
 ##############
@@ -379,14 +378,15 @@ exec --no-startup-id dex --autostart --environment i3
 
 # start a script to setup displays
 # uncomment the next line, use arandr to setup displays and save the file as monitor:
-#exec --no-startup-id ~/.screenlayout/monitor.sh
-exec --no-startup-id xrandr --output HDMI-A-0 --mode 1920x1080 --rate 75.00
+exec --no-startup-id ~/.screenlayout/monitor.sh
+exec --no-startup-id xrandr -s 1920x1080 -r 75
 
 # set wallpaper
 exec --no-startup-id sleep 2 && nitrogen --restore
 #exec --no-startup-id feh --bg-fill /usr/share/endeavouros/backgrounds/endeavouros_i3.png
 
 # set powersavings for display:
+#exec --no-startup-id xset s 480 dpms 600 600 600
 exec --no-startup-id xset s off -dpms 
 
 # disable power saving (for example if using xscreensaver)
@@ -395,7 +395,6 @@ exec --no-startup-id xset s off -dpms
 # use xautolock to use autosuspend rules for mobile devices
 # https://wiki.archlinux.org/title/Session_lock#xautolock
 #exec --no-startup-id xautolock -time 60 -locker "systemctl suspend"
-
 
 # xscreensaver
 # https://www.jwz.org/xscreensaver
@@ -478,10 +477,10 @@ set $yellowbrown	#e1b700
 
 # define colors for windows:
 #class		        	border		bground		text		indicator	child_border
-client.focused		    $lightblue	$darkblue	$white		$purple		$mediumgrey
-client.unfocused	    $darkblue	$darkblue	$grey		$purple		$darkgrey
-client.focused_inactive	$darkblue	$darkblue	$grey		$purple		$black
-client.urgent		    $urgentred	$urgentred	$white		$purple		$yellowbrown
+client.focused		    	$lightblue	$darkblue	$white		$mediumgrey	$mediumgrey
+client.unfocused	    	$darkblue	$darkblue	$grey		$darkgrey	$darkgrey
+client.focused_inactive		$darkblue	$darkblue	$grey		$black		$black
+client.urgent		    	$urgentred	$urgentred	$white		$yellowbrown	$yellowbrown
 
 ############################################
 # bar settings (input comes from i3blocks) #
@@ -507,7 +506,7 @@ strip_workspace_numbers yes
 
 		    colors {
 		    separator          $purple
-		    background         $black
+		    background         $darkgrey
 		    statusline         $white
 #                          		border 		        bg		txt		indicator
 		focused_workspace	$mediumgrey	   	$grey		$darkgrey	$purple
