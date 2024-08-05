@@ -1,23 +1,20 @@
 #include QMK_KEYBOARD_H
 
 enum {
-    TD_PC,
-    TD_COMI,
-    TD_SLA,
-    TD_CAPLOCK,
-    TD_ALT,
-    TD_MEN,
-    TD_MAY
+    // TD_PC,
+    // TD_COMI,
+    // TD_SLA,
+    TD_CAPLOCK
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_split_3x6_3 (
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-    KC_ESC,  KC_Q,   KC_W,    KC_F,    KC_P,    KC_B,                          KC_J, KC_L,   KC_U,      KC_Y,   TD(TD_PC), KC_BSPC,
+    KC_ESC,  KC_Q,   KC_W,    KC_F,    KC_P,    KC_B,                          KC_J, KC_L,   KC_U,      KC_Y,   KC_SCLN, KC_BSPC,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-    KC_TAB,  KC_A,   KC_R,    KC_S,    KC_T,    KC_G,                          KC_M, KC_N,   KC_E,      KC_I,      KC_O,TD(TD_COMI),
+    KC_TAB,  KC_A,   KC_R,    KC_S,    KC_T,    KC_G,                          KC_M, KC_N,   KC_E,      KC_I,   KC_O,    KC_QUOT,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-    KC_LCTL, KC_Z,   KC_X,    KC_C,    KC_D,    KC_V,                          KC_K, KC_H,TD(TD_MEN),TD(TD_MAY),TD(TD_SLA),KC_LALT,
+    KC_LCTL, KC_Z,   KC_X,    KC_C,    KC_D,    KC_V,                          KC_K, KC_H,   KC_COMM,   KC_DOT, KC_SLSH, KC_LALT,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                         MO(1),TD(TD_CAPLOCK),KC_SPC,        KC_ENT, MO(2), KC_LGUI
                                       //`--------------------------'  `--------------------------'
@@ -61,13 +58,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 tap_dance_action_t tap_dance_actions[] = {
-    [TD_PC] = ACTION_TAP_DANCE_DOUBLE(KC_SCLN, LSFT(KC_SCLN)),
-    [TD_COMI] = ACTION_TAP_DANCE_DOUBLE(KC_QUOT, LSFT(KC_QUOT)),
-    [TD_SLA] = ACTION_TAP_DANCE_DOUBLE(KC_SLSH, LSFT(KC_SLSH)),
-    [TD_CAPLOCK] = ACTION_TAP_DANCE_DOUBLE(KC_LSFT, KC_CAPS),
-    [TD_ALT] = ACTION_TAP_DANCE_DOUBLE(KC_RALT, KC_LALT),
-    [TD_MEN] = ACTION_TAP_DANCE_DOUBLE(KC_COMM, LSFT(KC_COMM)),
-    [TD_MAY] = ACTION_TAP_DANCE_DOUBLE(KC_DOT, LSFT(KC_DOT))
+    // [TD_PC] = ACTION_TAP_DANCE_DOUBLE(KC_SCLN, LSFT(KC_SCLN)),
+    // [TD_COMI] = ACTION_TAP_DANCE_DOUBLE(KC_QUOT, LSFT(KC_QUOT)),
+    // [TD_SLA] = ACTION_TAP_DANCE_DOUBLE(KC_SLSH, LSFT(KC_SLSH)),
+    [TD_CAPLOCK] = ACTION_TAP_DANCE_DOUBLE(KC_LSFT, KC_CAPS)
 };
 
 bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
