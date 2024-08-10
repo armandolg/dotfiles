@@ -4,16 +4,12 @@
 #define MASTER_LEFT
 #define TAPPING_TERM 200
 #define RGB_MATRIX_SLEEP
-#undef USE_I2C
-#undef SSD1306OLED
 
-#if defined(OLED_ENABLE)
+#ifdef OLED_ENABLE
 #    define SPLIT_LED_STATE_ENABLE
 #    define SPLIT_MODS_ENABLE
-#    define SPLIT_OLED_ENABLE
 #    define OLED_FONT_H "keyboards/crkbd/keymaps/ei/glcdfont.c"
 #    define KEY_LOG_ENABLE
-#    define OLED_TIMEOUT 60000
 #endif
 
 #ifdef RGB_MATRIX_ENABLE
