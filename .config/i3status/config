@@ -1,0 +1,36 @@
+general {
+        colors = true
+        interval = 1
+}
+
+order += "load"
+order += "memory"
+order += "disk /"
+order += "tztime local"
+order += "volume master"
+
+load {
+        format = "%1min"
+}
+
+memory {
+        format = "%used | %available"
+        threshold_degraded = "1G"
+        format_degraded = "MEMORY < %available"
+}
+
+disk "/" {
+        format = "%avail"
+}
+
+tztime local {
+        format = "%Y-%m-%d %H:%M:%S"
+}
+
+volume master {
+        format = "♪: %volume"
+        format_muted = "♪: muted (%volume)"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+}
