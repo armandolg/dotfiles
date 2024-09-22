@@ -4,10 +4,7 @@ return {
     event = 'VimEnter',
     opts = {
       icons = {
-        -- set icon mappings to true if you have a Nerd Font
         mappings = vim.g.have_nerd_font,
-        -- If you are using a Nerd Font: set icons.keys to an empty table which will use the
-        -- default whick-key.nvim defined Nerd Font icons, otherwise define a string table
         keys = vim.g.have_nerd_font and {} or {
           Up = '<Up> ',
           Down = '<Down> ',
@@ -40,7 +37,6 @@ return {
         },
       },
 
-      -- Document existing key chains
       spec = {
         { '<leader>c', group = '[C]ode', mode = { 'n', 'x' } },
         { '<leader>d', group = '[D]ocument' },
@@ -53,4 +49,5 @@ return {
     },
   },
 }
+
 -- vim: ts=2 sts=2 sw=2 et

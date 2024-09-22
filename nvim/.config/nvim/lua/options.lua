@@ -4,6 +4,12 @@
 vim.opt.number = true
 vim.opt.relativenumber = true
 
+-- Tabs and indentation
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
+vim.opt.autoindent = true
+
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
 
