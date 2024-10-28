@@ -30,7 +30,6 @@ return {
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
-        python = { 'isort', 'black' },
         javascript = { 'prettierd' },
         typescript = { 'prettierd' },
         javascriptreact = { 'prettierd' },
@@ -40,6 +39,8 @@ return {
         json = { 'prettierd' },
         yaml = { 'prettierd' },
         markdown = { 'prettierd' },
+        svelte = { 'prettierd' },
+        python = { 'isort', 'black' },
         c = { 'clang-format' },
         cpp = { 'clang-format' },
       },
