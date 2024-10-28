@@ -50,11 +50,6 @@ bindsym $mod+j exec --no-startup-id thunar
 assign [class="Thunar"] $ws1
 for_window [class=Thunar] focus
 
-# obsidian gui
-bindsym $mod+p exec --no-startup-id obsidian
-assign [class="obsidian"] $ws1
-for_window [class=obsidian] focus
-
 # kill focused window
 bindsym $mod+q kill
 
@@ -201,9 +196,7 @@ bar {
 }
 
 # display resolution
-exec --no-startup-id xrandr --output HDMI-A-0 --mode 3440x1440 --rate 100.00
-exec --no-startup-id xrandr --output DVI-D-0 --mode 1920x1080 --rate 60.00 --rotate right
-# exec --no-startup-id feh --bg-fill /home/vida/Pictures/l.png --bg-center --image-bg "#000000" /home/vida/Pictures/anti.png
+exec --no-startup-id xrandr --output HDMI-A-0 --mode 3440x1440 --rate 100.00 --primary --output DVI-D-0 --mode 1920x1080 --rate 60.00 --left-of HDMI-A-0 --rotate left
 
 # screenshot
 #bindsym Print exec --no-startup-id maim --format=png "/home/$USER/Pictures/screenshot-$(date -u +'%Y%m%d-%H%M%SZ')-all.png"
