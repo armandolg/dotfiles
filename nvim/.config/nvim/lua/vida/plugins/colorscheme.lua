@@ -1,11 +1,10 @@
 return {
   {
-    'sainnhe/gruvbox-material',
+    'bluz71/vim-moonfly-colors',
+    lazy = false,
     priority = 1000,
     init = function()
-      vim.g.gruvbox_material_background = 'hard'
-      vim.g.gruvbox_material_better_performance = 1
-      vim.cmd 'colorscheme gruvbox-material'
+      vim.cmd 'colorscheme moonfly'
     end,
   },
 }
