@@ -15,8 +15,10 @@ return {
       group = vim.api.nvim_create_augroup('NeoTreeInit', { clear = true }),
       callback = function()
         local f = vim.fn.expand '%:p'
-        if vim.fn.isdirectory(f) ~= 0 then
-          vim.cmd('Neotree current dir=' .. f)
+        if f ~= '' and vim.fn.isdirectory(f) ~= 0 then
+          pcall(function()
+            vim.cmd('Neotree current dir=' .. vim.fn.fnameescape(f))
+          end)
           vim.api.nvim_clear_autocmds { group = 'NeoTreeInit' }
         end
       end,
@@ -25,6 +27,13 @@ return {
   opts = {
     filesystem = {
       hijack_netrw_behavior = 'open_current',
+      follow_current_file = {
+        enabled = true,
+      },
+      filtered_items = {
+        hide_dotfiles = false,
+        hide_gitignored = false,
+      },
       window = {
         position = 'right',
         mappings = {
