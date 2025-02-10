@@ -37,17 +37,17 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+f exec --no-startup-id kitty
+bindsym $mod+p exec --no-startup-id kitty
 assign [class="kitty"] $ws1
 for_window [class=kitty] focus
 
 # browser
-bindsym $mod+w exec --no-startup-id brave
+bindsym $mod+b exec --no-startup-id brave
 assign [class="Brave"] $ws2
 for_window [class=Brave] focus
 
 # files
-bindsym $mod+j exec --no-startup-id thunar
+bindsym $mod+f exec --no-startup-id thunar
 assign [class="Thunar"] $ws3
 for_window [class=Thunar] focus
 
@@ -61,13 +61,13 @@ bindsym $mod+space exec --no-startup-id ~/.config/rofi/launchers/type-2/launcher
 bindsym $mod+n focus left
 bindsym $mod+e focus down
 bindsym $mod+i focus up
-bindsym $mod+o focus right
+bindsym $mod+a focus right
 
 # move focused window
 bindsym $mod+Shift+n move left
 bindsym $mod+Shift+e move down
 bindsym $mod+Shift+i move up
-bindsym $mod+Shift+o move right
+bindsym $mod+Shift+a move right
 
 # split in horizontal orientation
 bindsym $mod+Shift+w split h
@@ -103,25 +103,25 @@ set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
 
-set $monitor_main "HDMI-A-0"
-set $monitor_left "DVI-D-0"
+# set $monitor_main "HDMI-A-0"
+# set $monitor_left "DVI-D-0"
 
 #assign workspace to monitor
-workspace $ws1 output $monitor_left
-workspace $ws2 output $monitor_main
-workspace $ws3 output $monitor_main
-workspace $ws4 output $monitor_main
-workspace $ws5 output $monitor_left
+# workspace $ws1 output $monitor_left
+# workspace $ws2 output $monitor_main
+# workspace $ws3 output $monitor_main
+# workspace $ws4 output $monitor_main
+# workspace $ws5 output $monitor_left
 
 # switch to workspace
-bindsym $mod+a workspace number $ws1
+bindsym $mod+c workspace number $ws1
 bindsym $mod+r workspace number $ws2
 bindsym $mod+s workspace number $ws3
 bindsym $mod+t workspace number $ws4
 bindsym $mod+g workspace number $ws5
 
 # move focused container to workspace
-bindsym $mod+Shift+a move container to workspace number $ws1
+bindsym $mod+Shift+c move container to workspace number $ws1
 bindsym $mod+Shift+r move container to workspace number $ws2
 bindsym $mod+Shift+s move container to workspace number $ws3
 bindsym $mod+Shift+t move container to workspace number $ws4
@@ -147,7 +147,7 @@ mode "resize" {
         bindsym n resize shrink width 10 px or 10 ppt
         bindsym e resize grow height 10 px or 10 ppt
         bindsym i resize shrink height 10 px or 10 ppt
-        bindsym o resize grow width 10 px or 10 ppt
+        bindsym a resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -171,7 +171,8 @@ bar {
 }
 
 # display resolution
-exec --no-startup-id xrandr --output HDMI-A-0 --mode 3440x1440 --rate 100.00 --primary --output DVI-D-0 --mode 1920x1080 --rate 60.00 --left-of HDMI-A-0 --rotate left
+exec --no-startup-id xrandr --output HDMI-A-0 --mode 1920x1080 --rate 180.00
+# --primary --output DVI-D-0 --mode 1920x1080 --rate 60.00 --left-of HDMI-A-0 --rotate left
 
 # screenshot
 #bindsym Print exec --no-startup-id maim --format=png "/home/$USER/Pictures/screenshot-$(date -u +'%Y%m%d-%H%M%SZ')-all.png"
