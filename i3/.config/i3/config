@@ -37,7 +37,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+p exec --no-startup-id kitty
+bindsym $mod+y exec --no-startup-id kitty
 assign [class="kitty"] $ws1
 for_window [class=kitty] focus
 
@@ -103,15 +103,15 @@ set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
 
-# set $monitor_main "HDMI-A-0"
-# set $monitor_left "DVI-D-0"
+set $monitor_main "HDMI-A-0"
+set $monitor_left "DVI-D-0"
 
 #assign workspace to monitor
-# workspace $ws1 output $monitor_left
-# workspace $ws2 output $monitor_main
-# workspace $ws3 output $monitor_main
-# workspace $ws4 output $monitor_main
-# workspace $ws5 output $monitor_left
+workspace $ws1 output $monitor_left
+workspace $ws2 output $monitor_main
+workspace $ws3 output $monitor_main
+workspace $ws4 output $monitor_main
+workspace $ws5 output $monitor_left
 
 # switch to workspace
 bindsym $mod+c workspace number $ws1
@@ -171,8 +171,7 @@ bar {
 }
 
 # display resolution
-exec --no-startup-id xrandr --output HDMI-A-0 --mode 1920x1080 --rate 180.00
-# --primary --output DVI-D-0 --mode 1920x1080 --rate 60.00 --left-of HDMI-A-0 --rotate left
+exec --no-startup-id xrandr --output HDMI-A-0 --mode 3440x1440 --rate 100.00 --primary --output DVI-D-0 --mode 1920x1080 --rate 60.00 --left-of HDMI-A-0 --rotate left
 
 # screenshot
 #bindsym Print exec --no-startup-id maim --format=png "/home/$USER/Pictures/screenshot-$(date -u +'%Y%m%d-%H%M%SZ')-all.png"
