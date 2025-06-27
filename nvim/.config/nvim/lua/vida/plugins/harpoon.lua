@@ -40,7 +40,7 @@ return {
     vim.keymap.set('n', '<leader>hi', function()
       harpoon:list():select(3)
     end, { desc = '3' })
-    vim.keymap.set('n', '<leader>ho', function()
+    vim.keymap.set('n', '<leader>ha', function()
       harpoon:list():select(4)
     end, { desc = '4' })
   end,
