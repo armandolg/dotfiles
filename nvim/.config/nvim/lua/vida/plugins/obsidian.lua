@@ -10,8 +10,8 @@ return {
     opts = {
       workspaces = {
         {
-          name = 'iCloud-Vault',
-          path = '~/Documents/iCloud-Vault',
+          name = 'Vault',
+          path = '~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault',
         },
       },
       ui = {
