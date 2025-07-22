@@ -1,5 +1,5 @@
 # !(bTw I uSe ArCh!1)
-fastfetch
+# fastfetch
 
 # Powerlevel10k
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -37,3 +37,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - zsh)"
 export PATH=$PATH:$HOME/.go/bin
+. "$HOME/.local/bin/env"
+fpath=(/Users/vida/.docker/completions $fpath)
+autoload -Uz compinit
+compinit

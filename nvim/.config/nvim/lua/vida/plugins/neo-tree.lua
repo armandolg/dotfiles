@@ -36,6 +36,7 @@ return {
       },
       window = {
         position = 'right',
+        width = 30,
         mappings = {
           ['<leader>e'] = 'close_window',
         },

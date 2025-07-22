@@ -1,22 +1,46 @@
+-- return {
+--   {
+--     'bluz71/vim-moonfly-colors',
+--     lazy = false,
+--     priority = 1000,
+--     init = function()
+--       vim.cmd 'colorscheme moonfly'
+--     end,
+--   },
+-- }
+-- return {
+--   {
+--     'rebelot/kanagawa.nvim',
+--     priority = 1000,
+--     config = function()
+--       ---@diagnostic disable-next-line: missing-fields
+--       require('kanagawa').setup {
+--         transparent = true,
+--         colors = {
+--           theme = {
+--             all = {
+--               ui = {
+--                 bg_gutter = 'none',
+--               },
+--             },
+--           },
+--         },
+--       }
+--       vim.cmd.colorscheme 'kanagawa'
+--     end,
+--   },
+-- }
 return {
   {
-    'rebelot/kanagawa.nvim',
+    'catppuccin/nvim',
+    name = 'catppuccin',
     lazy = false,
     priority = 1000,
-    init = function()
-      require('kanagawa').setup {
-        transparent = true,
-        colors = {
-          theme = {
-            all = {
-              ui = {
-                bg_gutter = 'none',
-              },
-            },
-          },
-        },
+    config = function()
+      require('catppuccin').setup {
+        transparent_background = true,
       }
-      vim.cmd 'colorscheme kanagawa'
+      vim.cmd 'colorscheme catppuccin'
     end,
   },
 }
