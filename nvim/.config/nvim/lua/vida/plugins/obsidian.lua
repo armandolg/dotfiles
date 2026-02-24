@@ -23,7 +23,7 @@ return {
         },
       },
       follow_url_func = function(url)
-        vim.fn.jobstart { 'xdg-open', url }
+        vim.fn.jobstart { 'open', url }
       end,
     },
   },
